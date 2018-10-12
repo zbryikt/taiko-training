@@ -1,0 +1,193 @@
+@import vars
+@import basic
+
+html,body
+  width: 100%
+  height: 100%
+  margin: 0
+  padding: 0
+
+body
+  background: #222
+
+.view
+  position: relative
+  width: 800px
+  height: 100%
+  margin: auto
+  top: 0
+  overflow: hidden
+  background: url(bk.jpg) #777 center center no-repeat
+  background-size: cover
+.track
+  background: linear-gradient(to right, #533922 0%,#2C2C2C 100%)
+  border: 2px solid rgba(255,255,255,.5)
+  border-left: 0
+  border-right: 0
+  box-shadow: 0 2px 3px rgba(0,0,0,.3)
+  margin-top: 100px
+  width: 100%
+  height: 150px
+  position: relative
+  top: 60px
+
+.note
+  width: 60px
+  height: 60px
+  border-radius: 50%
+  border: 3px solid #444
+  padding: 5px
+  background: #fff
+  box-shadow: 1px 2px 3px rgba(0,0,0,.6)
+  position: absolute
+  top: 50%
+  transform: translate(-50%,-50%)
+  will-change: left
+  &:after
+    font-weight: 900
+    line-height: 42px
+    font-size: 16px
+    text-align: center
+    content: "ಠ_ಠ"
+    display: block
+    width: 100%
+    height: 100%
+    border-radius: 50%
+
+.note.don:after
+  background: #f00
+  border-color: #f99
+
+.note.ka:after
+  background: #0ff
+  border-color: #9ff
+
+.hint
+  width: 90px
+  height: 90px
+  padding: 14px
+  border-radius: 50%
+  border: 1px solid rgba(255,255,255,.5)
+  position: absolute
+  top: 50%
+  transform: translate(-50%,-50%)
+  left: 100px
+  .note
+    transform: translate(0,-50%)
+    background: none
+    border: 1px solid rgba(255,255,255,.8)
+    box-shadow: none
+    &:after
+      background: rgba(255,255,255,.2)
+      content: " "
+ 
+ .indicator
+   .img
+     width: 128px
+     height: 128px
+     position: absolute
+     top: 50%
+     left: 100px
+     transform: translate(-50%,-50%)
+     display: none
+   .good
+     background: url(taiko-01.svg) center center no-repeat
+   .ok
+     background: url(taiko-02.svg) center center no-repeat
+   
+ .score
+   margin: 90px 20px 20px
+   border: 4px solid #222
+   border-radius: 8px
+   box-shadow: 0 2px 4px rgba(0,0,0,.5)
+   padding: 10px
+   background: linear-gradient(90deg, #eee,#ddd)
+   .density, .diff, .combo, .max-combo
+     margin: 5px 0
+     &:before
+       display: inline-block
+       width: 120px
+       text-align: right
+       margin-right: 10px
+   .density
+     &:before
+       content: "密集度"
+   .diff
+     &:before
+       content: "時間差"
+   .combo
+     &:before
+       content: "コンボ"
+   .max-combo
+     &:before
+       content: "最大コンボ"
+ 
+ .lv
+   position: absolute
+   top: 90px
+   left: 30px
+   z-index: 2
+   font-weight: 900
+   &:before
+     content: "レベル"
+     font-size: 16px
+     display: inline-block
+     vertical-align: middle
+     margin-right: 5px
+   span
+     font-size: 48px
+     vertical-align: -10px
+
+.gauge
+  position: absolute
+  border-radius: 6px
+  background: linear-gradient(0deg,#444,#888)
+  top: 115px
+  left: 150px
+  width: 200px
+  font-size: 14px
+  padding: 3px 10px
+  text-align: right
+  color: rgba(255,255,255,.5)
+  height: 30px
+  overflow: hidden
+  .frame
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.9)
+    position: absolute
+    border-radius: 4px
+    border: 2px solid #222
+    top: 0
+    left: 0
+    z-index: 3
+    width: 100%
+    height: 100%
+  .inner
+    position: relative
+    width: 100%
+    height: 100%
+    border-radius: 4px
+    overflow: hidden
+  &:before
+    content: "次のレベルまで"
+    display: inline-block
+    position: absolute
+    z-index: 3
+    width: 100%
+    right: 10px
+    top: 50%
+    transform: translate(0,-51%)
+  .bar
+    position: absolute
+    height: 100%
+    width: 0%
+    background: #f00
+    top: 0
+    left: 0
+    z-index: 2
+.logo
+  position: absolute
+  top: 30px
+  right: 30px
+  background: url(taiko-logo.png) center center no-repeat
+  width: 320px
+  height: 100px

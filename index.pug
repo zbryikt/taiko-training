@@ -1,0 +1,50 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.5.4), angularjs(1.3.15), bootstrap(3.0/4.0)/semantic-ui(0.9.3/0.9.5)
+//-                  fontawesome(4.4.0), reactjs(0.14.0)
+- var use = { cdn: false, og: false, favicon: true, appleicon: true }
+- var lib = { jquery: true, d3js: false, angular: true, bootstrap: true, semantic: false, fontawesome: true, reactjs: false, revealjs: false, ionrangeslider: false, ldcolorpicker: false }
+- var assets = "assets"
+- var favicon = "http://zbryikt.github.io/taiko-training/favicon.png"
+- var title = "太鼓の達人 ～全換手特訓君～"
+- var og = {}
+- og.title = title
+- og.twitter = {type: "summary_large_image", site: "@zbryikt", creator: "@zbryikt"}
+- og.domain = "zbryikt.github.io"
+- og.url = ""
+- og.thumbnail = {width: 1200, height: 630, type: "image/jpg"}
+- og.thumbnail.url = "http://zbryikt.github.io/taiko-training/thumbnail.jpg"
+- og.author = "zbryikt"
+- og.section = "Taiwan"
+- og.keyword = "zbryikt,taiko no datsujin"
+- og.description = ""
+- var fb = {}
+- fb.app_id = ""
+- fb.admins = ""
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    // libraries
+    include library.pug
+    // custom files
+    link(rel="stylesheet",type="text/css",href="index.css")
+  body
+    .view
+      .logo
+      .lv: span 1
+      .gauge
+        .bar
+        .frame
+      .track
+        .hint: .note
+        .indicator
+          .good.img
+          .ok.img
+      .score
+        .density
+        .diff
+        //-.gauge
+        .combo
+        .max-combo
+    script(type="text/javascript",src="index.js")
